@@ -1,0 +1,17 @@
+{
+    "name": "komputer-2018/php-array-pro-array-functions",
+    "authors": [
+        {
+            "name": "G.Charkiewicz",
+            "email": "charkiewicz.grzegorz@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^5.3"
+    }
+}
