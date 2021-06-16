@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\arrayPro;
 
+use App\data\DataCityModel;
 use App\data\DataForArrayPro;
 
 class ArrayPro
@@ -36,6 +37,11 @@ class ArrayPro
         dump($this->myArrayUnique());
         dump("array_column");
         dump($this->myArrayColumn());
+        dump($this->myArrayColumnObject());
+        dump("array_push");
+        dump($this->myArrayPush());
+        dump("array_diff");
+        $this->myArrayDiff();
     }
 
     public function myArrayKeys(): array
@@ -86,11 +92,50 @@ class ArrayPro
         return array_column($this->multidimensionalArrayTheLocationCity(), 'country');
     }
 
+    public function myArrayColumnObject(): array
+    {
+        $array = $this->arrayTheCitiesObject();
+        return array_column($array, 'country');
+    }
+
+    public function myArrayPush(): array
+    {
+        $array = $this->dataArrayTheLocationCity();
+        array_push($array, 14,15,16);
+        return $array;
+    }
+
+    /**
+     * Porównanie tablic, zwrot indeksu z elementu nie będącego w jednej z tablic
+     */
+    public function myArrayDiff(): void
+    {
+        $arrayOne = [1,2,3,4,5,6];
+        $arrayTwo = [1,2,3,4,5,6,7];
+
+        $warsaw = new DataCityModel('Warsaw', 'Poland', 2500000,'4.110924', '18.682127');
+        $bialystok = new DataCityModel('Białystok', 'Poland', 250000,'14.110924', '15.682127');
+
+        $differenceArray = array_diff($arrayTwo, $arrayOne);
+        dump($differenceArray);
+        $differenceArrayTwo = array_diff($bialystok->returnArrayKeyAndValue(), $warsaw->returnArrayKeyAndValue());
+        dump($differenceArrayTwo);
+    }
+
     private function multidimensionalArrayTheLocationCity(): array
     {
         return [
             $this->dataForArrayPro::dataArrayTheLocationCityFrankfurt(),
             $this->dataForArrayPro::dataArrayTheLocationCityMumbai(),
+        ];
+    }
+
+    private function arrayTheCitiesObject(): array
+    {
+
+        return [
+            new DataCityModel('Warsaw', 'Poland', 2500000,'4.110924', '18.682127'),
+            new DataCityModel('Białystok', 'Poland', 250000,'14.110924', '15.682127'),
         ];
     }
 
