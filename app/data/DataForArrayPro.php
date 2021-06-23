@@ -28,6 +28,18 @@ class DataForArrayPro
         ];
     }
 
+
+    public static function dataArrayTheLocationCityValencia(): array
+    {
+        return [
+            'name' => 'Valencia',
+            'country' => 'France',
+            'population' => 985000,
+            'latitude' => 19.110924,
+            'longitude' => 72.682127,
+        ];
+    }
+
     public static function dataArrayTheNumbers(): array
     {
         return [10, 10, 20, 20, 30, 40, 50, 50, 50];
