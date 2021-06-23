@@ -11,7 +11,7 @@ class DataForArrayPro
         return [
             'name' => 'Frankfurt',
             'country' => 'Germany',
-            'population' => 785000,
+            'population' => 585000,
             'latitude' => 50.110924,
             'longitude' => 8.682127,
         ];
@@ -37,6 +37,26 @@ class DataForArrayPro
             'population' => 985000,
             'latitude' => 19.110924,
             'longitude' => 72.682127,
+        ];
+    }
+
+    public static function dataArrayTheLocationCityWarsaw(): array
+    {
+        return [
+            'name' => 'Warsaw',
+            'country' => 'Poland',
+            'population' => 1985000,
+            'latitude' => 28.110924,
+            'longitude' => 86.682127,
+        ];
+    }
+
+    public static function dataArrayCollectionsAllCity():array
+    {
+        return [
+            self::dataArrayTheLocationCityFrankfurt(),
+            self::dataArrayTheLocationCityMumbai(),
+            self::dataArrayTheLocationCityValencia(),
         ];
     }
 
